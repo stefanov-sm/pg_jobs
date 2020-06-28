@@ -14,8 +14,8 @@ function bgnd_run($os_cmd)
 
 function PDO_connection()
 {
-	$conn = new PDO('pgsql: host=<host-name>; dbname=<database-name>; user=<user-name>; password=<secret>');
-	$conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$conn -> setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-	return $conn;
+  $conn = new PDO('pgsql: host=<host-name>; dbname=<database-name>; user=<user-name>; password=<secret>');
+  $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn -> setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+  return $conn;
 }
