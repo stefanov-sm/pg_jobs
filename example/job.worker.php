@@ -14,4 +14,4 @@ $rs = $conn -> prepare(CURRENT_JOB_SQL);
 $rs -> execute([$jobid]);
 $job_definition = json_decode($rs -> fetchColumn());
 $rs = $conn -> prepare(WORKER_JOB_SQL);
-$rs -> execute(["Job {$job_definition -> message} invoked in {$now}"]);
+$rs -> execute(["Job '{$job_definition -> message}' invoked in {$now}"]);
