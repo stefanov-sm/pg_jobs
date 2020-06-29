@@ -8,4 +8,7 @@ require(HERE.'job.helpers.php');
 
 $conn = PDO_connection(); // or obtain a PDO connecion in your preferred way
 $rs = $conn -> query(PENDING_JOBS_SQL);
-while ($jobid = $rs -> fetchColumn()) background_run(WORKER_OS_COMMAND.$jobid);
+while ($jobid = $rs -> fetchColumn())
+{
+  background_run(WORKER_OS_COMMAND.$jobid);
+}
