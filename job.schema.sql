@@ -32,7 +32,10 @@ $$
      where date_trunc('minute', now()) = date_trunc('minute', t)
    )
  )
- and (coalesce(jsonb_array_length(schedule->'dow'), 0) = 0 or extract("ISODOW" from now()) in (select i::integer from jsonb_array_elements_text(schedule->'dow') i))
- and (coalesce(jsonb_array_length(schedule->'day'), 0) = 0 or extract("DAY"    from now()) in (select i::integer from jsonb_array_elements_text(schedule->'day') i))
- and (coalesce(jsonb_array_length(schedule->'mon'), 0) = 0 or extract("MONTH"  from now()) in (select i::integer from jsonb_array_elements_text(schedule->'mon') i));
+ and (coalesce(jsonb_array_length(schedule->'dow'), 0) = 0 
+      or extract("ISODOW" from now()) in (select i::integer from jsonb_array_elements_text(schedule->'dow') i))
+ and (coalesce(jsonb_array_length(schedule->'day'), 0) = 0 
+      or extract("DAY"    from now()) in (select i::integer from jsonb_array_elements_text(schedule->'day') i))
+ and (coalesce(jsonb_array_length(schedule->'mon'), 0) = 0 
+      or extract("MONTH"  from now()) in (select i::integer from jsonb_array_elements_text(schedule->'mon') i));
 $$;
