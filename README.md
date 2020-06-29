@@ -1,7 +1,8 @@
 # pg_jobs
 
 ### Scheduled jobs in Postgresql
-SQL function jobs.pending returns the id-s of jobs that are to be run  
+SQL function **jobs.pending()** scans table **jobs.schedule** and returns the id-s of the jobs that are to be run  
+  
 **example/job.agent.php** is scheduled to run every minute
 
 job.agent.php:
