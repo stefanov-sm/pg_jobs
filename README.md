@@ -7,7 +7,7 @@ SQL function jobs.pending returns the id-s of jobs that are to be run
 job.agent.php:
 ```php
 <?php
-define('PENDING_JOBS_SQL',  'SELECT jobid FROM jobs.pending() t(jobid)');
+define('PENDING_JOBS_SQL', 'SELECT jobid FROM jobs.pending() t(jobid)');
 
 define('HERE', __DIR__.DIRECTORY_SEPARATOR);
 define('WORKER_OS_COMMAND', 'php '.HERE.'job.worker.php ');
