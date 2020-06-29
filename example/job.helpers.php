@@ -1,6 +1,6 @@
 <?php
 // Async run an OS command in the background
-function bgnd_run($os_cmd)
+function background_run($os_cmd)
 {
   if (in_array(PHP_OS, ['WINNT', 'WIN32', 'WIN64', 'Windows']))
   {
