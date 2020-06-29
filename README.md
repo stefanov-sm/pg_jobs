@@ -5,7 +5,7 @@ SQL function **jobs.pending()** scans table **jobs.schedule** and returns the id
   
 **example/job.agent.php** is scheduled to run every minute
 
-job.agent.php:
+**job.agent.php**:
 ```php
 <?php
 define('PENDING_JOBS_SQL', 'SELECT jobid FROM jobs.pending() as t(jobid)');
@@ -23,7 +23,7 @@ while ($jobid = $rs -> fetchColumn())
   background_run(WORKER_OS_COMMAND.$jobid);
 }
 ```
-jobs database schema:
+**jobs** database schema:
 ```sql
 create schema if not exists jobs;
 
@@ -64,7 +64,7 @@ $$
  and (coalesce(jsonb_array_length(schedule->'mon'), 0) = 0 or extract("MONTH"  from now()) in (select i::integer from jsonb_array_elements_text(schedule->'mon') i));
 $$;
 ```
-Field jobs.job_schedule.schedule JSON schema:
+Field **jobs.job_schedule.schedule** JSON schema:
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -121,4 +121,4 @@ Field jobs.job_schedule.schedule JSON schema:
   "additionalProperties": false
 }
 ```
-See the examplein file jobs.schema.jsonschema
+See the example in file **job.schema.sql**.
