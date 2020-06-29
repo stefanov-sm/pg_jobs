@@ -121,6 +121,6 @@ Field **jobs.job_schedule.schedule** JSON schema:
   "additionalProperties": false
 }
 ```
-Field contents may be [validated](https://www.jsonschemavalidator.net/) before being written to the table.  
+It's good to have **schedule** field contents [validated](https://www.jsonschemavalidator.net/) against the schema before being written to the table.  
 See the example in file **job.schema.sql**.
 
