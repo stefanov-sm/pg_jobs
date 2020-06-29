@@ -125,5 +125,5 @@ Field **jobs.job_schedule.schedule** JSON schema:
 }
 ```
 It's good to have **schedule** field contents [validated](https://www.jsonschemavalidator.net/) against the schema before being written to the table.  
-See the example in file **job.schema.sql**.
+See the [example](https://github.com/stefanov-sm/pg_jobs/tree/master/example).
 
