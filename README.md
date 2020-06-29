@@ -64,3 +64,6 @@ $$
  and (coalesce(jsonb_array_length(schedule->'mon'), 0) = 0 or extract("MONTH"  from now()) in (select i::integer from jsonb_array_elements_text(schedule->'mon') i));
 $$;
 ```
+Field jobs.job_schedule.schedule must comply to this JSON schema:
+```json
+```
